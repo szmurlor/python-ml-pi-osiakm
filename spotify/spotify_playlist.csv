@@ -1,18 +1,19 @@
-0,La Fame Di Camilla,Quello Di Cui Non Parli Mai,6QG5XsPIE8aCdEWuBh6F9G
-1,Ultimo,Il ballo delle incertezze,35JwSMQXtHyTKPTcpXF07P
-2,Happysad,Nadzy na mróz,476N9HBMOOVp6b30fCYVdu
-3,Måneskin,Le parole lontane,1ABG6ke9SdUK9YayVafbcX
-4,Ermal Meta,Rien ne va plus,7uRMkzfsl1RtcP4893CjyL
-5,Aquilo,Silhouette,1ZyMdpNyiw4VYsbmHFgzEp
-6,TACONAFIDE,PIN,04Reou3HoLagPd6fjjoY1H
-7,Taylor Swift,Call It What You Want,2QD7DklEvkqncYacmhMukq
-8,Blackway,What's Up Danger (with Black Caviar),5zsHmE2gO3RefVsPyw2e3T
-9,Dermot Kennedy,Young & Free,154J7EMKDUOVwD2hWGDNHU
-10,Quebonafide,Żadnych zmartwień,2ikSI08Kw4pmVEU7jbtuZ8
-11,Coma,Los Cebula I Krokodyle Łzy,3CbIajYR2tj1dglcmLzsqC
-12,Walking On Cars,Speeding Cars,4GylZDT7adqIfVoPHyFb5X
-13,Morning Parade,Carousel,5poYFon3TqOSUNMjCnGgXY
-14,Morning Parade,Speechless,0gxfIfVY84SzxI4l0atV7v
-15,MAN WITH A MISSION,Dead End in Tokyo,2KfC6tJ8uVW1iY0wIHJttE
-16,Colours of Bubbles,Truth or Dare,7JS0ThcIwNkWC5iBl2nNIB
-17,Halsey,Haunting,1r1WtSrPbAOYHE7zwq4eqK
+artist_name,track_name,spotify_id,acousticness,danceability,duration_ms,energy,instrumentalness,key,liveness,loudness,mode,speechiness,tempo,valence
+La Fame Di Camilla,Quello Di Cui Non Parli Mai,6QG5XsPIE8aCdEWuBh6F9G,0.0024,0.457,206747,0.827,0,4,0.355,-4.72,0,0.0459,139.984,0.457
+Ultimo,Il ballo delle incertezze,35JwSMQXtHyTKPTcpXF07P,0.445,0.654,205833,0.76,0,3,0.064,-5.058,1,0.185,144.098,0.413
+Happysad,Nadzy na mróz,476N9HBMOOVp6b30fCYVdu,0.448,0.53,325997,0.701,0.901,1,0.12,-9.697,0,0.0294,148.185,0.316
+Måneskin,Le parole lontane,1ABG6ke9SdUK9YayVafbcX,0.397,0.635,204933,0.573,0,2,0.133,-4.114,0,0.0279,125.946,0.403
+Ermal Meta,Rien ne va plus,7uRMkzfsl1RtcP4893CjyL,0.00154,0.685,183920,0.827,0,1,0.164,-5.29,0,0.0332,118.018,0.504
+Aquilo,Silhouette,1ZyMdpNyiw4VYsbmHFgzEp,0.721,0.464,230417,0.412,0,1,0.0393,-8.342,1,0.032,132.259,0.12
+TACONAFIDE,PIN,04Reou3HoLagPd6fjjoY1H,0.476,0.63,215840,0.842,0,10,0.102,-6.165,0,0.199,169.954,0.425
+Taylor Swift,Call It What You Want,2QD7DklEvkqncYacmhMukq,0.186,0.598,203507,0.504,0.000221,9,0.34,-9.874,1,0.0731,163.954,0.252
+Blackway,What's Up Danger (with Black Caviar),5zsHmE2gO3RefVsPyw2e3T,0.00363,0.701,222307,0.755,0.000795,2,0.121,-5.82,1,0.0417,95.036,0.116
+Dermot Kennedy,Young & Free,154J7EMKDUOVwD2hWGDNHU,0.0845,0.487,266766,0.63,0,8,0.109,-6.053,1,0.0432,153.131,0.156
+Quebonafide,Żadnych zmartwień,2ikSI08Kw4pmVEU7jbtuZ8,0.614,0.315,307627,0.47,0,5,0.169,-9.53,0,0.131,83.593,0.143
+Coma,Los Cebula I Krokodyle Łzy,3CbIajYR2tj1dglcmLzsqC,0.00744,0.63,313760,0.667,0.00172,5,0.101,-6.41,1,0.024,106.03,0.399
+Walking On Cars,Speeding Cars,4GylZDT7adqIfVoPHyFb5X,0.213,0.505,242093,0.741,8.26e-06,8,0.0787,-6.316,1,0.0354,91.025,0.239
+Morning Parade,Carousel,5poYFon3TqOSUNMjCnGgXY,0.0132,0.532,230992,0.632,0.000336,7,0.115,-7.792,0,0.0368,131.968,0.233
+Morning Parade,Speechless,0gxfIfVY84SzxI4l0atV7v,0.0302,0.451,233366,0.855,0.00741,9,0.112,-6.155,0,0.0518,134.054,0.259
+MAN WITH A MISSION,Dead End in Tokyo,2KfC6tJ8uVW1iY0wIHJttE,0.00104,0.567,218800,0.931,1.56e-06,7,0.342,-5.057,1,0.061,109.932,0.327
+Colours of Bubbles,Truth or Dare,7JS0ThcIwNkWC5iBl2nNIB,0.000305,0.51,237825,0.847,0.00042,9,0.333,-4.906,0,0.0347,130.087,0.331
+Halsey,Haunting,1r1WtSrPbAOYHE7zwq4eqK,0.015,0.461,260797,0.696,0.000491,9,0.21,-5.752,0,0.0486,180.006,0.311

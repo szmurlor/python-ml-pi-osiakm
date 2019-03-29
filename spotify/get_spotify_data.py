@@ -1,29 +1,59 @@
 import spotipy
 import spotipy.util as util
-import pprint as pp
 import csv
 
 
-def show_tracks(tracks):
-    for i, item in enumerate(tracks['items']):
+def show_tracks(raw_tracks):
+    for i, item in enumerate(raw_tracks['items']):
         track = item['track']
         print("   %d %32.32s %s %s" % (i, track['artists'][0]['name'], track['name'], track['id']))
 
-def get_tracks(tracks):
-    result = []
-    for i, item in enumerate(tracks['items']):
+
+def get_tracks(raw_tracks):
+    columns = ['artist_name',
+               'track_name',
+               'spotify_id']
+    result = [columns]
+    for i, item in enumerate(raw_tracks['items']):
         track = item['track']
-        id = track['id']
-        result.append([i, track['artists'][0]['name'], track['name'], track['id']])
+        result.append([track['artists'][0]['name'], track['name'], track['id']])
     return result
 
-def get_audio_features(list_of_tracks):
-    result = []
-    ids = [x[3] for x in list_of_tracks]
+
+def get_audio_features(tracks):
+    columns = ['acousticness',
+               'danceability',
+               'duration_ms',
+               'energy',
+               'instrumentalness',
+               'key',
+               'liveness',
+               'loudness',
+               'mode',
+               'speechiness',
+               'tempo',
+               'valence']
+    result = [columns]
+    ids = [x[2] for x in tracks]
     audio_features = sp.audio_features(ids)
     for track in audio_features:
-        result.append(track)
+        if track:
+            data = [track[x] for x in columns]
+            result.append(data)
     return result
+
+
+def get_full_data(list_of_tracks, list_of_features):
+    return [
+        list_of_tracks[i] + list_of_features[i] for i in range(len(list_of_tracks))
+    ]
+
+
+def save_as_csv(csv_file, data):
+    with open(csv_file, 'w', encoding='utf-8') as out:
+        writer = csv.writer(out, lineterminator='\n')
+        writer.writerows(data)
+
 
 username = 'hardreamer'
 scope = 'user-library-read playlist-read-private'
@@ -38,18 +68,12 @@ if token:
     sp = spotipy.Spotify(auth=token)
     sourcePlaylist = sp.user_playlist(username,
                                       playlist_id)
-    print(sourcePlaylist['name'])
-    print('total tracks: ', sourcePlaylist['tracks']['total'])
 
-    tracks = sourcePlaylist["tracks"]
-    show_tracks(tracks)
-    l = get_tracks(tracks)
-    # pp.pprint(l)
+    raw_tracks = sourcePlaylist["tracks"]
+    tracks = get_tracks(raw_tracks)
+    features = get_audio_features(tracks)
+    fd = get_full_data(tracks, features)
     csv_file = 'spotify_playlist.csv'
-    with open(csv_file, 'w', encoding='utf-8') as out:
-        writer = csv.writer(out, lineterminator='\n')
-        writer.writerows(l)
-    af = get_audio_features(l)
-    pp.pprint(af)
+    save_as_csv(csv_file, fd)
 else:
     print("Can't get token for", username)
