@@ -7,9 +7,9 @@ import pprint as pp
 def get_albums(raw_albums):
     result = dict()
     for album in raw_albums:
-        result[album['id']] = [album['artists'][0]['name'], album['name']]  # todo dodać rok
-    result['228Mzfzb0i3e43RmgPAHAM'] = ['Taco Hemingway', 'Flagey']
-    result['2FR4jyEN61L5p0uoHGQhkF'] = ['Taco Hemingway', 'Wosk']
+        result[album['id']] = [album['artists'][0]['name'], album['name'], album['release_date'][:4]]
+    result['228Mzfzb0i3e43RmgPAHAM'] = ['Taco Hemingway', 'Flagey', '2018']
+    result['2FR4jyEN61L5p0uoHGQhkF'] = ['Taco Hemingway', 'Wosk', '2016']
     return result
 
 
@@ -18,18 +18,24 @@ def get_tracks(albums):
         'name',
         'artist',
         'album',
-        'spotify_id'
+        'release_date',
+        'spotify_id',
+        'popularity'
     ]
     result = [columns]
     for id, album in albums.items():
         songs_from_album = sp.album_tracks(id)
         songs_from_album = songs_from_album['items']
         for item in songs_from_album:
+            id = item['id']
+            track = sp.track(id)
             result.append([
-                item['name'],
-                album[0],
-                album[1],
-                item['id']
+                track['name'],
+                track['artists'][0]['name'],
+                track['album']['name'],
+                track['album']['release_date'],
+                track['id'],
+                track['popularity']
             ])
     return result
 
@@ -48,7 +54,7 @@ def get_audio_features(tracks):
                'tempo',
                'valence']
     result = [columns]
-    ids = [x[3] for x in tracks]
+    ids = [x[4] for x in tracks]
     audio_features = sp.audio_features(ids)
     for track in audio_features:
         if track:
