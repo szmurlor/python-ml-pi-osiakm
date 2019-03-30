@@ -7,8 +7,11 @@ import pprint as pp
 def get_albums(raw_albums):
     result = dict()
     for album in raw_albums:
-        result[album['id']] = [album['artists'][0]['name'], album['name']]
+        result[album['id']] = [album['artists'][0]['name'], album['name']]  # todo dodać rok
+    result['228Mzfzb0i3e43RmgPAHAM'] = ['Taco Hemingway', 'Flagey']
+    result['2FR4jyEN61L5p0uoHGQhkF'] = ['Taco Hemingway', 'Wosk']
     return result
+
 
 def get_tracks(albums):
     columns = [
@@ -68,7 +71,9 @@ def save_as_csv(csv_file, data):
 
 username = 'hardreamer'
 scope = 'user-library-read playlist-read-private'
+# todo: dict z nazwami potencjalnych artystów do analizy i ich spotify id
 artist_id = '7CJgLPEqiIRuneZSolpawQ'  # Taco Hemingway
+# artist_id = '6XyY86QOPPrYVGvF9ch6wz'  # Linkin Park
 token = util.prompt_for_user_token(username,
                                    scope,
                                    client_id='060305157323499d95406a8fc72482bf',
