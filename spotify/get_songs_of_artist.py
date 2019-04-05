@@ -8,8 +8,8 @@ def get_albums(raw_albums):
     result = dict()
     for album in raw_albums:
         result[album['id']] = [album['artists'][0]['name'], album['name'], album['release_date'][:4]]
-    result['228Mzfzb0i3e43RmgPAHAM'] = ['Taco Hemingway', 'Flagey', '2018']
-    result['2FR4jyEN61L5p0uoHGQhkF'] = ['Taco Hemingway', 'Wosk', '2016']
+    # result['228Mzfzb0i3e43RmgPAHAM'] = ['Taco Hemingway', 'Flagey', '2018']
+    # result['2FR4jyEN61L5p0uoHGQhkF'] = ['Taco Hemingway', 'Wosk', '2016']
     return result
 
 
@@ -78,8 +78,9 @@ def save_as_csv(csv_file, data):
 username = 'hardreamer'
 scope = 'user-library-read playlist-read-private'
 # todo: dict z nazwami potencjalnych artystów do analizy i ich spotify id
-artist_id = '7CJgLPEqiIRuneZSolpawQ'  # Taco Hemingway
+# artist_id = '7CJgLPEqiIRuneZSolpawQ'  # Taco Hemingway
 # artist_id = '6XyY86QOPPrYVGvF9ch6wz'  # Linkin Park
+artist_id = '3hN3iJMbbBmqBSAMx5veDa'
 token = util.prompt_for_user_token(username,
                                    scope,
                                    client_id='060305157323499d95406a8fc72482bf',
@@ -95,7 +96,7 @@ if token:
     tracks = get_tracks(albums)
     features = get_audio_features(tracks)
     data = get_full_data(tracks, features)
-    csv_file = 'taco_tracks.csv'
+    csv_file = 'ultimo_tracks.csv'
     save_as_csv(csv_file, data)
 else:
     print("Can't get token for", username)
