@@ -55,11 +55,16 @@ def get_audio_features(tracks):
                'valence']
     result = [columns]
     ids = [x[4] for x in tracks]
-    audio_features = sp.audio_features(ids)
-    for track in audio_features:
-        if track:
-            data = [track[x] for x in columns]
-            result.append(data)
+    start = 0
+    finish = start + 50
+    while(start < len(ids)):
+        audio_features = sp.audio_features(ids[start:finish])
+        for track in audio_features:
+            if track:
+                data = [track[x] for x in columns]
+                result.append(data)
+        start = finish
+        finish = start + 50
     return result
 
 
@@ -79,8 +84,8 @@ username = 'hardreamer'
 scope = 'user-library-read playlist-read-private'
 # todo: dict z nazwami potencjalnych artystów do analizy i ich spotify id
 # artist_id = '7CJgLPEqiIRuneZSolpawQ'  # Taco Hemingway
-# artist_id = '6XyY86QOPPrYVGvF9ch6wz'  # Linkin Park
-artist_id = '3hN3iJMbbBmqBSAMx5veDa'
+artist_id = '6XyY86QOPPrYVGvF9ch6wz'  # Linkin Park
+# artist_id = '3hN3iJMbbBmqBSAMx5veDa' #  Ultimo
 token = util.prompt_for_user_token(username,
                                    scope,
                                    client_id='060305157323499d95406a8fc72482bf',
@@ -96,7 +101,7 @@ if token:
     tracks = get_tracks(albums)
     features = get_audio_features(tracks)
     data = get_full_data(tracks, features)
-    csv_file = 'ultimo_tracks.csv'
+    csv_file = 'linkin_park_tracks.csv'
     save_as_csv(csv_file, data)
 else:
     print("Can't get token for", username)
