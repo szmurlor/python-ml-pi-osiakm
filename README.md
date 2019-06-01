@@ -1,4 +1,4 @@
-# Wykorzystanie uczenia maszynowego w języku Python do rozwiązania zadania z serwisu Kaggle
+﻿# Wykorzystanie uczenia maszynowego w języku Python do rozwiązania zadania z serwisu Kaggle
 Monika Osiak, Informatyka Stosowana, Wydział Elektryczny, Politechnika Warszawska
 
 ## Wstęp
@@ -14,14 +14,5 @@ to do
 7. Praca w Jupyter Notebook
 8. Praca w Google Colab
 
-## Projekt 1: Spotify
+## Spotify
 Analiza twórczości artystów na podstawie danych ze Spotify. Pobranie danych z API Spotify za pomocą skryptu w języku Python i wykorzystaniu pakietu spotipy. Eksploracja pozyskanych danych za pomocą bibliotek Pythona oraz Jupyter Notebooka.
-
-## Projekt 2: Formuła 1
-Eksploracyjna analiza danych dla datasetu nt. Formuły 1 z serwisu Kaggle.
-
-## Projekt 3: Will it rain in Australia? - problem klasyfikacyjny
-Wykorzystanie danych z serwisu Kaggle oraz biblioteki scikit-learn do przewidzenia, czy kolejnego dnia będzie padać.
-
-## Projekt 4: Barcelona
-Ekploracyjna analiza danych dla datasetu nt. Barcelony z serwisu Kaggle.
